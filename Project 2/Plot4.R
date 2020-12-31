@@ -13,6 +13,7 @@ coal.NEI <- NEI[which(NEI$SCC %in% coal.SCC),]
 
 col.agg <- aggregate(Emissions~year, data = coal.NEI, FUN = sum)
 
+# Making plot
 png("Project 2/plot4.png", width=480, height=480)
 ggplot(col.agg, aes(x = as.factor(year), y = Emissions/10^3,  
                     label = round(Emissions /10^3, 2))) +
